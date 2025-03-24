@@ -131,3 +131,6 @@ dist
 
 # VScode settings
 .vscode
+
+# Output files
+*.out
