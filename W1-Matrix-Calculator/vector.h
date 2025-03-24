@@ -27,10 +27,11 @@ class Vector {
         Vector(size_t n); // Default - Creates a Vector with n slots and asks for n numbers in the terminal
         Vector(const vector<double> vector); // Takes a vector<double> and converts it into a Vector
         Vector(const Vector &rhs); // Copy Constructor
-        Vector& operator=(const Vector & rhs); // Copy Assignment Operator
 
         // Equality Operator
         bool operator==(const Vector & rhs);
+        // Copy Assignment Operator
+         Vector& operator=(const Vector & rhs);
 
         // Vector Addition
         Vector operator+(const Vector &other);
@@ -44,6 +45,7 @@ class Vector {
         size_t getRows() const;
         vector<double> getEntries() const;
 
+        // Destructor
         ~Vector();
 };
 

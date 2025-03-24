@@ -4,8 +4,12 @@
 
 using namespace std;
 
+// Constructors ----------------------------------------------------------------------------------------
+
+// Default Constructor
 Vector::Vector(size_t n) : entries(), n(n) {
     vector<double> entries;
+    // Prompts the User to enter n entries
     for (int i = 0; i < n; ++i) {
         double entry;
         cout << "Please enter a number: ";
@@ -14,15 +18,19 @@ Vector::Vector(size_t n) : entries(), n(n) {
     }
     this->entries = entries;
 }
+// vector to Vector conversion
 Vector::Vector(const vector<double> vector) : entries(vector), n(vector.size()) {}
+// Copy Constructor
 Vector::Vector(const Vector &rhs) : entries(rhs.entries), n(rhs.n) {}
 
+// Boolean Operator
 bool Vector::operator==(const Vector & rhs) {
     if (this->entries != rhs.getEntries()) return false;
     if (this->n != rhs.getRows()) return false;
     return true;
 }
 
+// Copy Assignment
 Vector& Vector::operator=(const Vector & rhs) {
     if (*this == rhs) return *this;
     this->n = rhs.getRows();
@@ -30,14 +38,9 @@ Vector& Vector::operator=(const Vector & rhs) {
     return *this;
 }
 
-void Vector::print() {
-    // Iterates through the entries of the Vector and prints them
-    for (vector<double>::iterator it = this->entries.begin(); it != this->entries.end(); ++it) {
-        cout << "[ " << *it << " ]" << endl;
-    }
-    cout << endl;
-}
+// Operators ----------------------------------------------------------------------------------------
 
+// Vector Addition
 Vector Vector::operator+(const Vector &other) {
     vector<double> sum;
     vector<double> v1 = this->getEntries();
@@ -49,6 +52,7 @@ Vector Vector::operator+(const Vector &other) {
     return w;
 }
 
+// Vector Addition Assignment
 Vector& Vector::operator+=(const Vector &other) {
     vector<double> sum;
     vector<double> v1 = this->getEntries();
@@ -60,6 +64,7 @@ Vector& Vector::operator+=(const Vector &other) {
     return *this;
 }
 
+// Scalar Multiplication
 Vector operator*(const double c, const Vector & m) {
     vector<double> product;
     vector<double> mEntries = m.getEntries();
@@ -70,16 +75,34 @@ Vector operator*(const double c, const Vector & m) {
     return v;
 }
 
+// Scalar Multiplication, but this allows the commutative property
 Vector operator*(const Vector & m, const double c) {
-    vector<double> product;
-    vector<double> mEntries = m.getEntries();
-    for (size_t i = 0; i < m.n; ++i) {
-        product.emplace_back(mEntries[i] * c);
-    }
-    Vector v(product);
-    return v;
+    return c * m;
 }
 
+// Dot Product
+double dotProduct(const Vector & v1, const Vector & v2) {
+    if (v1.getRows() != v2.getRows()) {
+        return 0;
+    }
+    double product = 0;
+    vector<double> v1Entries = v1.getEntries();
+    vector<double> v2Entries = v2.getEntries();
+    for (size_t i = 0; i < v1.getRows(); ++i) {
+        product += v1Entries[i] * v2Entries[i];
+    }
+    return product;
+}
+
+// Utility ----------------------------------------------------------------------------------------
+
+void Vector::print() {
+    // Iterates through the entries of the Vector and prints them
+    for (vector<double>::iterator it = this->entries.begin(); it != this->entries.end(); ++it) {
+        cout << "[ " << *it << " ]" << endl;
+    }
+    cout << endl;
+}
 
 size_t Vector::getRows() const {
     return this->n;
@@ -90,17 +113,3 @@ vector<double> Vector::getEntries() const {
 }
 
 Vector::~Vector() {}
-
-double dotProduct(const Vector & v1, const Vector & v2) {
-    if (v1.getRows() != v2.getRows()) {
-        return 0;
-    }
-
-    double product = 0;
-    vector<double> v1Entries = v1.getEntries();
-    vector<double> v2Entries = v2.getEntries();
-    for (size_t i = 0; i < v1.getRows(); ++i) {
-        product += v1Entries[i] * v2Entries[i];
-    }
-    return product;
-}
