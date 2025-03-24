@@ -76,6 +76,8 @@ vector<double> Vector::getEntries() const {
     return this->entries;
 }
 
+Vector::~Vector() {}
+
 double dotProduct(const Vector & v1, const Vector & v2) {
     if (v1.getRows() != v2.getRows()) {
         return 0;
