@@ -17,6 +17,19 @@ Vector::Vector(size_t n) : entries(), n(n) {
 Vector::Vector(const vector<double> vector) : entries(vector), n(vector.size()) {}
 Vector::Vector(const Vector &rhs) : entries(rhs.entries), n(rhs.n) {}
 
+bool Vector::operator==(const Vector & rhs) {
+    if (this->entries != rhs.getEntries()) return false;
+    if (this->n != rhs.getRows()) return false;
+    return true;
+}
+
+Vector& Vector::operator=(const Vector & rhs) {
+    if (*this == rhs) return *this;
+    this->n = rhs.getRows();
+    this->entries = rhs.getEntries();
+    return *this;
+}
+
 void Vector::print() {
     // Iterates through the entries of the Vector and prints them
     for (vector<double>::iterator it = this->entries.begin(); it != this->entries.end(); ++it) {
