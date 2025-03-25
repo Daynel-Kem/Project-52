@@ -14,8 +14,10 @@ using namespace std;
 
     There are a few utility functions such as
         - print()
-        - getRows()
+        - getCols()
         - getEntries()
+
+    The Vectors are stored as Row Vectors, Not Column Vectors
 
 */
 class Vector {
@@ -29,9 +31,9 @@ class Vector {
         Vector(const Vector &rhs); // Copy Constructor
 
         // Equality Operator
-        bool operator==(const Vector & rhs);
+        bool operator==(const Vector & rhs) const;
         // Copy Assignment Operator
-         Vector& operator=(const Vector & rhs);
+        Vector& operator=(const Vector & rhs);
 
         // Vector Addition
         Vector operator+(const Vector &other);
@@ -42,8 +44,9 @@ class Vector {
 
         // Utility Functions
         void print();
-        size_t getRows() const;
+        size_t getCols() const;
         vector<double> getEntries() const;
+        double operator[](size_t i);
 
         // Destructor
         ~Vector();
