@@ -4,6 +4,42 @@
 #include <vector>
 #include "vector.h"
 
+/*
+
+    A Matrix Class that can perform simple Linear Algebra Operatrions
+    The Functionality of this class is listed below:
+        - Matrix Addition
+        - Scalar Multiplication
+        - Matrix Multiplication
+        - Tranpose
+        - Determinant
+        - Row Reduced Echelon Form (RREF)
+        - Inverse
+        - Solve Ax = b
+        - Eigenvalues & Eigenvectors
+
+    As usual with Matrices, some functions are specific to certain types of Matrices
+    Square Matrices:
+        - Determinant
+        - Inverse (Limited up to 4x4 matrices for now)
+        - Eigenvalues & Eigenvectors
+    
+    Same Size:
+        - Matrix Addition
+
+    Matrix a columns = Matrix b rows:
+        - Matrix Multiplcation
+        - Solve Ax = b
+
+    There are a few utility functions such as
+        - print()
+        - getRows()
+        - getCols()
+        - getEntries()
+        - isSquare()
+
+*/
+
 class Matrix {
     std::vector<Vector> entries;
     size_t n; // number of Rows
@@ -38,8 +74,8 @@ class Matrix {
         size_t getCols() const;
         vector<Vector> getEntries() const;
         bool isSquare() const;
-};
 
-bool sizeEqual(const Matrix & m1, const Matrix & m2);
+        ~Matrix();
+};
 
 #endif

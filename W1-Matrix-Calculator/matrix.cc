@@ -31,8 +31,16 @@ Matrix eigenMtoM(const Eigen::MatrixXd &m) {
     Matrix a(m3);
     return a;
 }
+
+bool sizeEqual(const Matrix & m1, const Matrix & m2) {
+    if (m1.getCols() != m2.getCols()) return false;
+    if (m1.getRows() != m2.getRows()) return false;
+    return true;
+}
 // ===========================================================================================
 
+
+// Constructors ---------------------------------------------------------------------------------------------------
 Matrix::Matrix(size_t n, size_t m) : entries(), n(n), m(m) {
     vector<Vector> entries;
     for (size_t i = 0; i < n; ++i) {
@@ -42,16 +50,18 @@ Matrix::Matrix(size_t n, size_t m) : entries(), n(n), m(m) {
     }
     this->entries = entries;
 }
-
 Matrix::Matrix(vector<Vector> entries) : entries(entries), n(entries.size()), m(entries.empty() ? 0 : entries[0].getCols()) {}
 Matrix::Matrix(const Matrix &other) : entries(other.entries), n(other.n), m(other.m) {}
-
+ 
+// Boolean Check ---------------------------------------------------------------------------------------------------
 bool Matrix::operator==(const Matrix &rhs) const {
     if (this->n != rhs.getRows()) return false;
     if (this->m != rhs.getCols()) return false;
     if (this->entries != rhs.getEntries()) return false;
     return true;
 }
+
+// Assignment Operator ----------------------------------------------------------------------------------------------
 Matrix& Matrix::operator=(const Matrix &rhs) {
     if (*this == rhs) return *this;
     this->entries = rhs.getEntries();
@@ -60,6 +70,7 @@ Matrix& Matrix::operator=(const Matrix &rhs) {
     return *this;
 }
 
+// Matrix Addition ---------------------------------------------------------------------------------------------------
 Matrix Matrix::operator+(const Matrix & other) {
     if (!sizeEqual(*this, other)) throw std::invalid_argument("Matrices do not match sizes");
     vector<Vector> sum;
@@ -84,6 +95,7 @@ Matrix& Matrix::operator+=(const Matrix & other) {
     return *this;
 }
 
+// Matrix Multiplication ---------------------------------------------------------------------------------------------------
 // Currently Using Eigen (lib) I GOT SUPER LAZY WITH THIS ONE
 // THIS IS ACTUALLY PRETTY EASY, I JUST DIDN'T FEEL LIKE DOING IT
 // WHEN I STARTED DOING IT, WILL DO IN FUTURE RELEASE
@@ -105,6 +117,7 @@ Matrix Matrix::operator*(const Matrix & other) {
     return eigenMtoM(c);
 }
 
+// Scalar Multiplication ---------------------------------------------------------------------------------------------
 Matrix operator*(const double c, const Matrix & m) {
     vector<Vector> product;
     vector<Vector> mEntries = m.getEntries();
@@ -116,6 +129,7 @@ Matrix operator*(const double c, const Matrix & m) {
     return sProduct;
 }
 
+// Transpose ---------------------------------------------------------------------------------------------------
 void Matrix::transpose() {
     vector<Vector> m;
     vector<Vector> thisEntries = this->getEntries();
@@ -133,6 +147,7 @@ void Matrix::transpose() {
     this->entries = m;
 }
 
+// Determinant ---------------------------------------------------------------------------------------------------
 // Currently Using Eigen (lib)
 double Matrix::det() {
     if (!this->isSquare()) throw std::invalid_argument("Not Square Matrix");
@@ -147,6 +162,7 @@ double Matrix::det() {
     return a.determinant();
 }
 
+// Row Reduced Echelon Form (rref) --------------------------------------------------------------------------------
 // Unfinished (This is Copilot Copied, I will implement this on my own once I start working on it again)
 Matrix Matrix::rref() {
     Eigen::MatrixXd matrix = MtoEigenM(*this);
@@ -183,6 +199,7 @@ Matrix Matrix::rref() {
     return eigenMtoM(matrix);
 }
 
+// Inverse ------------------------------------------------------------------------------------------------------
 // Currently Using Eigen (lib)
 Matrix Matrix::inverse() {
     if (!this->isSquare()) throw std::invalid_argument("Not Square Matrix");
@@ -201,6 +218,7 @@ Matrix Matrix::inverse() {
     }
 }
 
+// Eigenvalues & Eigenvectors ---------------------------------------------------------------------------------------------
 // Currently Using Eigen (lib)
 void Matrix::eigen() {
     if (!this->isSquare()) throw std::invalid_argument("Not Square Matrix");
@@ -212,6 +230,7 @@ void Matrix::eigen() {
     cout << "Column Eigenvectors are:\n" << eigensolver.eigenvectors() << endl;
 }
 
+// Ax = b ----------------------------------------------------------------------------------------------------------
 // Currently Using Eigen (lib)
 Vector Matrix::solve(const Vector &b) {
     if (this->getCols() != b.getCols()) throw std::invalid_argument("Matrix and Vector do not match sizes");
@@ -233,6 +252,7 @@ Vector Matrix::solve(const Vector &b) {
     return v;
 }
 
+// Utility Functions ==================================================================================================
 void Matrix::print() {
     for (size_t i = 0; i < n; ++i) {
         this->entries[i].print();
@@ -251,10 +271,3 @@ vector<Vector> Matrix::getEntries() const {
 bool Matrix::isSquare() const {
     return (this->getCols() == this->getRows());
 }
-
-bool sizeEqual(const Matrix & m1, const Matrix & m2) {
-    if (m1.getCols() != m2.getCols()) return false;
-    if (m1.getRows() != m2.getRows()) return false;
-    return true;
-}
-
