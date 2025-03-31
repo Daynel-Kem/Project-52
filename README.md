@@ -15,6 +15,7 @@ This is an initial 1.0.0 release as there is much to be added including, but not
 - Proper Exception Handling
 - Step-by-step solutions
 - Complex + Rational Solutions (currently using doubles)
+
 However, this release does include the basic necessities needed for the calculator:
 - Matrix Addition
 - Scalar Multiplication
