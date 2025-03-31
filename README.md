@@ -17,6 +17,7 @@ This is an initial 1.0.0 release as there is much to be added including, but not
 - Complex + Rational Solutions (currently using doubles)
 
 However, this release does include the basic necessities needed for the calculator:
+- Vectors
 - Matrix Addition
 - Scalar Multiplication
 - Matrix Multiplication
