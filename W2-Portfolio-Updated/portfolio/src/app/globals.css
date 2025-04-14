@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+* {
+  font-family: Outfit;
+}
+
+.Ovo {
+  font-family: Ovo;
+}
+
+.Outfit {
+  font-family: Outfit;
+}
+
+/* Light Hover is amber-50 */
