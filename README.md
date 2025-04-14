@@ -31,7 +31,7 @@ However, this release does include the basic necessities needed for the calculat
 I will definitely work more on this project (as it is also quite useful for me for school work), but here is my week 1 product.
 
 ## Week 2 - Portfolio Updated
-A simple update to my Portfolio Website (Will soon be on [danielyh.kim](danielyh.kim))
+A simple update to my Portfolio Website (Will soon be on [danielyh.kim](https://danielyh.kim))
 The stack that I'm using to create this portfolio is Next.js with React.js
 I followed a tutorial to create the basic template of the website, however, this will definitely be heavily modified because the website doesn't look
 the way I would like it to look.
