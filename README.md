@@ -29,3 +29,14 @@ However, this release does include the basic necessities needed for the calculat
 - Eigenvalues & Eigenvectors
 
 I will definitely work more on this project (as it is also quite useful for me for school work), but here is my week 1 product.
+
+## Week 2 - Portfolio Updated
+A simple update to my Portfolio Website (Will soon be on [danielyh.kim](danielyh.kim))
+The stack that I'm using to create this portfolio is Next.js with React.js
+I followed a tutorial to create the basic template of the website, however, this will definitely be heavily modified because the website doesn't look
+the way I would like it to look.
+
+## Week 3 - AI Chatbot
+A pretty small and simple AI Chatbot that uses OpenAI's api with Python to create a chatbot that types in a similar fashion to myself. 
+Whilst it doesn't exactly type the way I type, it does use similar slang and messaging styles that I use when I message other people.
+It's not a very big project but it was fun and we need to take first steps whenever starting something, right?
