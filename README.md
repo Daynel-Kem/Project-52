@@ -2,8 +2,9 @@
  My Year Long Campaign of making a side project every week
 
  Here's a list of the projects:
- W1 - Matrix Calculator
- "link to the github repo"
+ 1. W1 - [Matrix Calculator](W1-Matrix-Calculator)
+ 1. W2 - [Portfolio Updated](W2-Portfolio-Updated)
+ 1. W3 - [Chatbot Lvl1](W3-Chatbot-Lvl1)
 
 ## Week 1 - Matrix Calculator
 A Matrix class implemented in C++ that allows you to perform basic Matrix Arithmetic and a few Linear Algebra Operations.
