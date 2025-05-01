@@ -35,8 +35,10 @@ import right_arrow from './right-arrow.png';
 import send_icon from './send-icon.png';
 import right_arrow_bold from './right-arrow-bold.png';
 import right_arrow_bold_dark from './right-arrow-bold-dark.png';
+import bg_image from './bg-image.png';
 
 export const assets = {
+    bg_image,
     user_image,
     code_icon,
     code_icon_dark,
