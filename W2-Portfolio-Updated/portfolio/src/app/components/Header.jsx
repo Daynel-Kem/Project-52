@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <div className='w-full h-screen flex flex-row justify-center items-center gap-10 z-10' style={{backgroundImage: `url(${assets.bg_image.src})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
       <motion.div 
-      className='flex flex-col items-left justify-center text-left w-[50%] ml-40'
+      className='flex flex-col items-center sm:items-start text-left w-[50%] mx-[30%] sm:ml-40'
       initial={{opacity:0, x:-100}}
       whileInView={{opacity:1, x:0}}
       transition={{duration: 0.8, type: 'spring', stiffness: 100}}>
@@ -19,7 +19,7 @@ const Header = () => {
           </motion.div>
         </h3>
         <div className="flex flex-col sm:width-[80%]">
-          <h1 className='text-5xl sm:text-6xl lg:text-[66px] Ovo text-center sm:text-left'>
+          <h1 className='text-5xl sm:text-6xl lg:text-[66px] Ovo text-center sm:text-left text-gray-600 sm:text-black '>
               I'm a           
           </h1>
           <RotateWords text="" words={["Student", "Developer", "Friend"]} className='' />

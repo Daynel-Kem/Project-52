@@ -7,7 +7,7 @@ import { motion } from 'framer-motion'
 
 const Services = () => {
   return (
-    <div id="services" className='w-full px-[12%] py-10 scroll-mt-20 h-[140%] sm:h-screen'>
+    <div id="services" className='w-full px-[12%] py-10 scroll-mt-20 h-[140%] md:h-screen'>
     <motion.div
     initial={{opacity:0, y:100}}
     whileInView={{opacity:1, y:0}}
