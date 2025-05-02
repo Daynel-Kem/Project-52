@@ -12,7 +12,8 @@ const Header = () => {
       initial={{opacity:0, x:-100}}
       whileInView={{opacity:1, x:0}}
       transition={{duration: 0.8, type: 'spring', stiffness: 100}}>
-        <h3 className="flex gap-2 text-xl md:text-2xl mb-3 Ovo text-center sm:text-left">Hey, I'm Daniel Kim 
+        <h3 className="flex flex-col sm:flex-row gap-2 text-xl md:text-2xl mb-3 Ovo items-center sm:items-left text-center sm:text-left">
+          Hey, I'm Daniel Kim 
           <motion.div initial={{scale:0}} whileInView={{scale:1}} transition={{duration: 0.8, type: 'spring', stiffness: 100}}>
             <Image src={assets.hand_icon} alt="" className="rounded-full w-6"/>
           </motion.div>

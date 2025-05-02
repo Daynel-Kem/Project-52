@@ -26,7 +26,7 @@ return (
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 20 }}
       transition={{ duration: 0.6, type: "spring", bounce: 0.4 }}
-      className={`Ovo sm:text-6xl lg:text-[90px] 
+      className={`Ovo sm:text-6xl lg:text-[90px] text-center sm:text-left
                 ${index==0 ? "text-amber-400" : ""} 
                 ${index==1 ? " text-green-300" : ""}
                 ${index==2 ? "text-red-800" : ""}`}
