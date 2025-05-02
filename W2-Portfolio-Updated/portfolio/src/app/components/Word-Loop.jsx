@@ -22,10 +22,10 @@ return (
   <AnimatePresence mode="wait">
     <motion.h3
       key={words[index]}
-      initial={{ opacity: 0, y: -40 }}
+      initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: 40 }}
-      transition={{ duration: 0.5 }}
+      exit={{ opacity: 0, y: 20 }}
+      transition={{ duration: 0.6, type: "spring", bounce: 0.4 }}
       className={`Ovo sm:text-6xl lg:text-[90px] 
                 ${index==0 ? "text-amber-400" : ""} 
                 ${index==1 ? " text-green-300" : ""}
