@@ -2,6 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 import { assets } from '../../../assets/assets'
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 
 const Contact = () => {
     const [result, setResult] = useState("")
@@ -32,11 +33,15 @@ const Contact = () => {
 
   return (
     <div id="contact" className='w-full px-[12%] py-10 scroll-mt-20 bg-[url("/footer-bg-color.png")] bg-no-repeat bg-center bg-[length:90%_auto]'>
+    <motion.div
+        initial={{opacity:0, y:100}}
+        whileInView={{opacity:1, y:0}}
+        transition={{duration: 0.7, type: 'tween'}}>     
         <h4 className='text-center mb-2 text-lg Ovo'>Connect with Me</h4>
         <h2 className='text-center text-5xl Ovo'>Contact</h2>
 
         <p className='text-center max-w-2xl mx-auto mt-5 mb-12 Ovo'>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde nesciunt dolorem eos impedit, voluptatibus deleniti sequi minima, adipisci placeat quod ad ipsa at in repudiandae itaque libero, rem voluptates corporis.
+        Feel free to reach out if you’d like to connect, collaborate, or just have a chat! I’m always open to new opportunities and conversations—especially around tech, AI, or music.
         </p>
 
         <form onSubmit={onSubmit} className='max-w-2xl mx-auto'>
@@ -50,7 +55,7 @@ const Contact = () => {
             </button>
             <p className='mt-4'>{result}</p>
         </form>
-
+    </motion.div>   
     </div>
   )
 }

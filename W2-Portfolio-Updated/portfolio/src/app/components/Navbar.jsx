@@ -26,13 +26,13 @@ const Navbar = () => {
 }, [])
 
   return (
-    <div className="z-20">
+    <div>
     <div className="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%]">
       <Image src={assets.header_bg_color} alt="" className="w-full"/>
     </div>
 
       {/* Make the isScroll be equal to the scroll height or smth and make the the opacity equal to the scroll height so it makes a smooth transition between full navbar and small */}
-      <nav className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between x-50 ${isScroll ? "bg-white/50 backdrop-blur-lg shadow-sm" : ""}`}> 
+      <nav className={`z-10 w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between x-50 ${isScroll ? "bg-white/50 backdrop-blur-lg shadow-sm" : ""}`}> 
         <a href="#top">
           <Image src={assets.logo} className='w-28 cursor-pointer mr-14' alt=""/>
         </a>
@@ -69,7 +69,7 @@ const Navbar = () => {
           <li><a className="Ovo" onClick={closeMenu} href="#top">Home</a></li>
           <li><a className="Ovo" onClick={closeMenu} href="#about">About Me</a></li>
           <li><a className="Ovo" onClick={closeMenu} href="#services">Services</a></li>
-          <li><a className="Ovo" onClick={closeMenu} href="#work">My Work</a></li>
+          <li><a className="Ovo" onClick={closeMenu} href="#projects">Projects</a></li>
           <li><a className="Ovo" onClick={closeMenu} href="#contact">Contact Me</a></li>
         </ul>
 

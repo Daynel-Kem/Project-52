@@ -80,24 +80,28 @@ export const assets = {
 
 export const workData = [
     {
-        title: 'Frontend project',
-        description: 'Web Design',
+        title: 'Project 52',
+        description: 'Year Long Projects',
         bgImage: '/work-1.png',
+        link: 'https://github.com/Daynel-Kem/Project-52'
     },
     {
-        title: 'Geo based app',
-        description: 'Mobile App',
-        bgImage: '/work-2.png',
+        title: 'Devoted App',
+        description: 'Full Stack',
+        bgImage: './Bible.jpg',
+        link: ''
     },
     {
-        title: 'Photography site',
-        description: 'Web Design',
-        bgImage: '/work-3.png',
+        title: 'TBD',
+        description: 'WIP',
+        bgImage: '/WIP.jpg',
+        link: ''
     },
     {
-        title: 'UI/UX designing',
-        description: 'UI/UX Design',
-        bgImage: '/work-4.png',
+        title: 'TBD',
+        description: 'WIP',
+        bgImage: '/WIP.jpg',
+        link: ''
     },
 ]
 
@@ -109,9 +113,9 @@ export const serviceData = [
 ]
 
 export const infoList = [
-    { icon: assets.code_icon, iconDark: assets.code_icon_dark, title: 'Languages', description: 'HTML, CSS, JavaScript React Js, Next Js' },
-    { icon: assets.edu_icon, iconDark: assets.edu_icon_dark, title: 'Education', description: 'B.Tech in Computer Science' },
-    { icon: assets.project_icon, iconDark: assets.project_icon_dark, title: 'Projects', description: 'Built more than 5 projects' }
+    { icon: assets.code_icon, iconDark: assets.code_icon_dark, title: 'Languages', description: 'C/C++, HTML, CSS, JavaScript, React Js, Angular Js, Next Js, Python, Bash' },
+    { icon: assets.edu_icon, iconDark: assets.edu_icon_dark, title: 'Education', description: 'B. Math - University of Waterloo' },
+    { icon: assets.project_icon, iconDark: assets.project_icon_dark, title: 'Projects', description: 'Project 52, Devoted, and More' }
 ];
 
 export const toolsData = [

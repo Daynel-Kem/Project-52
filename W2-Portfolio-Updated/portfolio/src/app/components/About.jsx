@@ -1,10 +1,15 @@
 import Image from 'next/image'
 import React from 'react'
 import { assets, infoList, toolsData } from '../../../assets/assets'
+import { motion } from 'framer-motion'
 
 const About = () => {
   return (
     <div id="about" className='w-full px-[12%] py-10 scroll-mt-20'>
+    <motion.div
+        initial={{opacity:0, y:100}}
+        whileInView={{opacity:1, y:0}}
+        transition={{duration: 0.7, type: 'tween'}}>
       <h4 className='text-center mb-2 text-lg Ovo'>Introduction</h4>
       <h2 className='text-center text-5xl Ovo'>About Me</h2>
 
@@ -14,9 +19,7 @@ const About = () => {
         </div>
         <div className='flex-1'>
             <p className='mb-10 max-w-2xl Ovo'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, accusantium! Earum, deleniti. 
-                Sapiente consequatur perferendis soluta deserunt in placeat, 
-                adipisci vel impedit rem nostrum tempore? Molestias ullam voluptatem reiciendis nulla
+            Hi! I'm a Mathematics student at the University of Waterloo with a focus on Software Development and a strong interest in AI and machine learning. I'm Korean and Christian, and I enjoy playing bass guitar in my free time. I'm motivated, curious, and always eager to learn—especially when it comes to combining math and tech to solve real-world problems.
             </p>
             <ul className='grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl'>
                 {infoList.map(({icon, iconDark, title, description}, index)=>(
@@ -39,6 +42,9 @@ const About = () => {
             </ul>
         </div>
       </div>
+
+    </motion.div>
+      
     </div>
   )
 }

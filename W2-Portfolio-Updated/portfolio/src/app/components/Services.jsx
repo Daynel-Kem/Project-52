@@ -1,20 +1,25 @@
 import React from 'react'
 import { assets, serviceData } from '../../../assets/assets'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 
 // Change up the Services to actually reflect what you do
 
 const Services = () => {
   return (
-    <div id="services" className='w-full px-[12%] py-10 scroll-mt-20 h-screen'>
-      <h4 className='text-center mb-2 text-lg Ovo'>What I Do</h4>
+    <div id="services" className='w-full px-[12%] py-10 scroll-mt-20 h-[140%] sm:h-screen'>
+    <motion.div
+    initial={{opacity:0, y:100}}
+    whileInView={{opacity:1, y:0}}
+    transition={{duration: 0.7, type: 'tween'}}>
+        <h4 className='text-center mb-2 text-lg Ovo'>What I Do</h4>
         <h2 className='text-center text-5xl Ovo'>My Services</h2>
 
         <p className='text-center max-w-2xl mx-auto mt-5 mb-12 Ovo'>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde nesciunt dolorem eos impedit, voluptatibus deleniti sequi minima, adipisci placeat quod ad ipsa at in repudiandae itaque libero, rem voluptates corporis.
+        I offer support in software development, with a focus on building efficient, clean code and exploring AI/ML solutions. Whether it’s developing web apps, automating tasks, or working with data, I’m always excited to help bring ideas to life and learn along the way.
         </p>
 
-        <div className='grid lg:grid-cols-4 my-10 gap-6 '>
+        <div className='grid lg:grid-cols-4 my-10 gap-6'>
             {serviceData.map(({icon, title, description, link}, index)=>(
                 <div key={index} className='border-grey-400 rounded-xl border-[0.5px] p-6 cursor-pointer hover:bg-green-50 hover:-translate-y-1 duration-500 hover:shadow-2xl flex flex-col items-center gap-4'>
                     <Image src={icon} alt="" className='w-10'/> 
@@ -29,6 +34,8 @@ const Services = () => {
             ))}
         </div>
 
+    </motion.div>
+      
     </div>
   )
 }
