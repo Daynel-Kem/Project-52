@@ -36,7 +36,7 @@ const About = () => {
             <ul className='flex items-center gap-3 sm:gap-5 mt-4'>
               {toolsData.map((tool, index)=>( 
                 <li key={index} className='flex items-center justify-center w-12 sm:w-14 aspect-square border-[0.5px] border-gray-400 hover:bg-blue-50 rounded-lg cursor-pointer hover:-translate-y-1 duration-500'>
-                  <Image src={tool} alt="Tool" className='w-5 sm:w-7'/>
+                  <a href={tool.link} target='_blank'><Image src={tool.icon} alt="Tool" className='w-5 sm:w-7'/></a>
                 </li>
               ))}
             </ul>

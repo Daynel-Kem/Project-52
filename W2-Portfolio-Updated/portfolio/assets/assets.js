@@ -36,6 +36,10 @@ import send_icon from './send-icon.png';
 import right_arrow_bold from './right-arrow-bold.png';
 import right_arrow_bold_dark from './right-arrow-bold-dark.png';
 import bg_image from './bg-image.png';
+import youtube from './youtube.png';
+import linkedin from './linkedin.webp';
+import github from './github.png';
+import instagram from './instagram.png';
 
 export const assets = {
     bg_image,
@@ -75,7 +79,11 @@ export const assets = {
     right_arrow,
     send_icon,
     right_arrow_bold,
-    right_arrow_bold_dark
+    right_arrow_bold_dark,
+    youtube,
+    linkedin,
+    github,
+    instagram
 };
 
 export const workData = [
@@ -108,7 +116,7 @@ export const workData = [
 export const serviceData = [
     { icon: assets.web_icon, title: 'Web design', description: 'Web development is the process of building, programming...', link: '' },
     { icon: assets.mobile_icon, title: 'Mobile app', description: 'Mobile app development involves creating software for mobile devices...', link: '' },
-    { icon: assets.ui_icon, title: 'UI/UX design', description: 'UI/UX design focuses on creating a seamless user experience...', link: '' },
+    { icon: assets.ui_icon, title: 'AI/ML', description: 'UI/UX design focuses on creating a seamless user experience...', link: '' },
     { icon: assets.graphics_icon, title: 'Graphics design', description: 'Creative design solutions to enhance visual communication...', link: '' },
 ]
 
@@ -119,5 +127,8 @@ export const infoList = [
 ];
 
 export const toolsData = [
-    assets.vscode, assets.firebase, assets.mongodb, assets.figma, assets.git
+    { icon: assets.youtube, link: 'https://www.youtube.com/@danielkim7495' },
+    { icon: assets.linkedin, link: 'https://www.linkedin.com/in/daniel-kim-67aa532bb/' },
+    { icon: assets.github, link: 'https://github.com/Daynel-Kem' },
+    { icon: assets.instagram, link: 'https://www.instagram.com/kimyhdev/' },
 ];
