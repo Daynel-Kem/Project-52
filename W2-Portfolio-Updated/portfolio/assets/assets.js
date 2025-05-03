@@ -39,7 +39,7 @@ import bg_image from './bg-image.png';
 import youtube from './youtube.png';
 import linkedin from './linkedin.webp';
 import github from './github.png';
-import instagram from './instagram.png';
+import instagram from './Instagram.png';
 
 export const assets = {
     bg_image,
