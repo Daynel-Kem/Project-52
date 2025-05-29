@@ -103,7 +103,7 @@ export const workData = [
     {
         title: 'Expense App',
         description: 'Simple Expense App with Data Visualization',
-        bgImage: '/money,png',
+        bgImage: '/money.png',
         link: 'https://daynel-kem.github.io/expense-app-page/'
     },
     {
