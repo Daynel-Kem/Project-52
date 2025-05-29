@@ -40,7 +40,6 @@ import youtube from './youtube.png';
 import linkedin from './linkedin.webp';
 import github from './github.png';
 import instagram from './Instagram.png';
-import money from './money.png';
 
 export const assets = {
     bg_image,
@@ -102,8 +101,8 @@ export const workData = [
     },
     {
         title: 'Expense App',
-        description: 'Simple Expense App with Data Visualization',
-        bgImage: './money.jpg',
+        description: 'Expense App',
+        bgImage: '/money.jpg',
         link: 'https://daynel-kem.github.io/expense-app-page/'
     },
     {
