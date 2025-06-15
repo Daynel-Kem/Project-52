@@ -135,3 +135,6 @@ dist
 # Output files
 *.out
 *.o
+
+# Virtual environments
+.venv
