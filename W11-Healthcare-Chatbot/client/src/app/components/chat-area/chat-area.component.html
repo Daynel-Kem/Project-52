@@ -1,0 +1,23 @@
+<div class="chat-area-container">
+    <!-- Chat Area -->
+    <div #chatContainer class="chat-area">
+        @for (message of messages; track message) {
+            @if (!message.isUser) {
+            <div class="bot-message">
+                <span class="message-text">{{ message.message }}</span>
+            </div>
+            }
+            @if (message.isUser) {
+            <div class="user-message">
+                <span class="message-text">{{ message.message }}</span>
+            </div>
+            }
+
+        }
+    </div>
+    <!-- Send Message Section -->
+     <div class="send-message-section">
+        <textarea (keydown.enter)="addMessage()" [(ngModel)]="userMessage" [disabled]="!messageSent" class="message-input" cols="80" rows="2" placeholder="Type your message here..."></textarea>
+        <button type="submit" class="send-button" (click)="addMessage()" [disabled]="!messageSent">Send</button>
+     </div>
+</div>

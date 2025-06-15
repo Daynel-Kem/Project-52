@@ -1,0 +1,23 @@
+.model-container {
+    width: 500px;
+    height: 550px;
+    background-color: #4A6C6F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar-base {
+    height: 450px;
+    width: 400px;
+    object-fit: contain;
+    overflow: hidden;
+    bottom: 150px;
+    position: absolute;
+}
+
+.avatar-img-base {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
