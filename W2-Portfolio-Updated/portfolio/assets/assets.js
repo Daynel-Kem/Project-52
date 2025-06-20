@@ -100,16 +100,16 @@ export const workData = [
         link: ''
     },
     {
+        title: 'Game Development',
+        description: 'My Game Site',
+        bgImage: '/little-gamer.png',
+        link: 'https://gamer-site-rgloby3fp-daniel-kims-projects-51d439f1.vercel.app/home'
+    },
+    {
         title: 'Expense App',
         description: 'Expense App',
         bgImage: '/money.jpg',
         link: 'https://daynel-kem.github.io/expense-app-page/'
-    },
-    {
-        title: 'TBD',
-        description: 'WIP',
-        bgImage: '/WIP.jpg',
-        link: ''
     },
 ]
 
