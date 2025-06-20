@@ -102,7 +102,7 @@ export const workData = [
     {
         title: 'Game Development',
         description: 'My Game Site',
-        bgImage: '/little-gamer.png',
+        bgImage: '/little-gamer-black.png',
         link: 'https://gamer-site-rgloby3fp-daniel-kims-projects-51d439f1.vercel.app/home'
     },
     {
