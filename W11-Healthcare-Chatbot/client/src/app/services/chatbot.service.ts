@@ -7,7 +7,7 @@ import { Message } from '../app.component';
   providedIn: 'root'
 })
 export class ChatbotService {
-  baseUrl = "http://127.0.0.1:5000"
+  baseUrl = "https://project-52-1.onrender.com"
 
   constructor(private http: HttpClient) { }
 
