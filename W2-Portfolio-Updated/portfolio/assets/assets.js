@@ -106,10 +106,10 @@ export const workData = [
         link: 'https://gamer-site-rgloby3fp-daniel-kims-projects-51d439f1.vercel.app/home'
     },
     {
-        title: 'Expense App',
-        description: 'Expense App',
-        bgImage: '/money.jpg',
-        link: 'https://daynel-kem.github.io/expense-app-page/'
+        title: 'Healthcare Chatbot',
+        description: 'AI & FS',
+        bgImage: '/health.jpg',
+        link: 'https://healthcare-chatbot-phi.vercel.app'
     },
 ]
 
