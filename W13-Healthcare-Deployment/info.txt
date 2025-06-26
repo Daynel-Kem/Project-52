@@ -1,3 +1,4 @@
 I just spent time learning different deployment tools to deploy both week 12 and week 11 into the actual web
+tools include: Docker, Render, and Vercel
 You can see both of them in my portfolio website's projects at
 https://danielyh.kim
