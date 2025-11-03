@@ -1,7 +1,7 @@
 # Python
 
 ## Summary
-Takes a playlist from youtube url and returns a zip containing all the songs converted into mp3s of the playlist
+Takes a playlist from youtube url and returns a zip containing all the songs converted into mp3s of the playlist <br>
 Deployed on [In Progress]()
 
 ### Technologies Used:
