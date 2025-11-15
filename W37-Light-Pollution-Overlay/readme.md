@@ -1,0 +1,1 @@
+Overlay real Bortle scale or VIIRS satellite data on map

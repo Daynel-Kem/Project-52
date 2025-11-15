@@ -4,7 +4,7 @@ import { useState } from 'react'
 import styles from './UrlSubmit.module.css'
 
 export default function UrlSubmit() {
-  const backendRoute: string = import.meta.env.VITE_BACKEND_ROUTE
+  const backendRoute: string = "https://2p8z7ni4e5.execute-api.us-east-2.amazonaws.com/production"
   const [url, setUrl] = useState("");
   const [loading, setLoading] = useState(false); 
 
@@ -14,7 +14,7 @@ export default function UrlSubmit() {
 
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_BACKEND_ROUTE}/download`,
+        `${backendRoute}/download`,
         {
           method: "POST",
           headers: {

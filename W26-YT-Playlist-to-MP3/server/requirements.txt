@@ -1,0 +1,4 @@
+flask
+zappa
+flask-cors
+yt-dlp

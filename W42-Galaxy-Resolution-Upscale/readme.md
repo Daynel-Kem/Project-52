@@ -1,0 +1,1 @@
+ERSGAN or SwinIR to upscale low quality images of space
