@@ -8,4 +8,5 @@ Inner Products
 Norms
 Projections
 Gram-Schmidt Orthogonalization
+Least Squares
 """
