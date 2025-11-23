@@ -1,30 +1,31 @@
 import numpy as np
 import functions as fnc
-import matplotlib.pylot as plt
+import matplotlib.pyplot as plt
+
 
 class DenseLayer:
     def __init__(self, input_size, output_size, activation):
         self.weights = np.random.randn(input_size, output_size) * 0.1
-        self.bias = np.zeroes(output_size)
+        self.bias = np.zeros(output_size)
         self.activation = activation
 
     def forward(self, x):
         self.x = x
-        self.z = np.dot(self.weights, self.x) + self.bias
+        self.z = np.dot(self.x, self.weights,) + self.bias
         self.a = self.activation.forward(self.z)
         return self.a
     
     def backward(self, grad_a):
-        grad_z = grad_a * self.activation.backward(self.z, grad_a)
-        self.dW = np.dot(self.x, grad_z)
+        grad_z = self.activation.backward(self.z, grad_a)
+        self.dW = np.dot(self.x.T, grad_z)
         self.db = np.sum(grad_z, axis=0)
         grad_x = grad_z @ self.weights.T
         return grad_x
-    
+
     def update(self, lr):
         self.weights -= lr * self.dW
         self.bias -= lr * self.db
-        
+
 
 class Neural_Network:
     def __init__(self, loss_fnc, lr=0.1):
@@ -40,15 +41,8 @@ class Neural_Network:
             x = layer.forward(x)
         return x
 
-    def back_prop(self, y_pred, y_true):
-        # Special case: Softmax + CrossEntropy
-        if isinstance(self.loss_fn, fnc.CrossEntropyWithSoftmax):
-            grad = self.loss_fn.backward(y_pred, y_true)
-        else:
-            grad = self.loss_fn.backward(y_pred, y_true)
-
-            # Need to backprop through activation of last layer
-            grad = self.layers[-1].activation.backward(self.layers[-1].z, grad)
+    def back_prop(self, y_true, y_pred):
+        grad = self.loss_fnc.backward(y_true, y_pred)
 
         for layer in reversed(self.layers):
             grad = layer.backward(grad)
@@ -59,22 +53,63 @@ class Neural_Network:
 
     def train(self, X, y, epochs=1000):
         for epoch in range(epochs):
-            # forward
             y_pred = self.f_forward(X)
 
-            # loss
+            # correct argument order
             loss = self.loss_fnc.forward(y, y_pred)
 
-            # backward
+            # backprop: correct argument order
             self.back_prop(y, y_pred)
 
-            # update weights
             self.update()
 
             if epoch % 100 == 0:
                 print(f"Epoch {epoch}, Loss: {loss:.4f}")
 
+    def predict(self, X):
+        y_pred = self.f_forward(X)
+        return y_pred
 
-    def predict():
-        pass
+    def save_full(self, filename):
+        model_data = {
+            "lr": self.lr,
+            "loss": self.loss_fnc.__class__.__name__,
+            "layers": []
+        }
 
+        for layer in self.layers:
+            layer_info = {
+                "input_size": layer.weights.shape[0],
+                "output_size": layer.weights.shape[1],
+                "activation": layer.activation.__class__.__name__,
+                "weights": layer.weights,
+                "bias": layer.bias,
+            }
+            model_data["layers"].append(layer_info)
+
+        np.save(filename, model_data, allow_pickle=True)
+
+# Model Loader
+activation_map = {
+    "Sigmoid": fnc.Sigmoid,
+    "Softmax": fnc.Softmax
+}
+
+loss_map = {
+    "MSE": fnc.MeanSquaredError,
+    "CrossEntropyWithSoftmax": fnc.CrossEntropyWithSoftmax
+}
+
+def load_full(filename):
+    model_data = np.load(filename, allow_pickle=True).item()
+
+    model = Neural_Network(loss_map[model_data["loss"]](), lr=model_data["lr"])
+
+    for layer_info in model_data["layers"]:
+        act = activation_map[layer_info["activation"]]()
+        layer = DenseLayer(layer_info["input_size"], layer_info["output_size"], act)
+        layer.weights = layer_info["weights"]
+        layer.bias = layer_info["bias"]
+        model.add_layer(layer)
+
+    return model

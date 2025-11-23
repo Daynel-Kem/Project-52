@@ -168,8 +168,11 @@ class Sigmoid(Activation):
 
 class Softmax(Activation):
     def forward(self, z):
+        if z.ndim == 1:
+            z = z.reshape(1, -1)
         exp = np.exp(z - np.max(z, axis=1, keepdims=True))
         return exp / np.sum(exp, axis=1, keepdims=True)
+
     def backward(self, z, grad_output):
         # general softmax derivative (slower but flexible)
         s = self.forward(z)
@@ -189,7 +192,7 @@ class Loss():
     def backward(self, y_true, y_pred):
         raise NotImplementedError
     
-class MSE(Loss):
+class MeanSquaredError(Loss):
     def forward(self, y_true, y_pred):
         s = np.square(y_true - y_pred)
         s = np.sum(s)/y_true.size
@@ -200,8 +203,9 @@ class MSE(Loss):
     
 class CrossEntropyWithSoftmax(Loss):
     def forward(self, y_true, y_pred):
-        eps = 1e-15
-        y_pred = np.clip(y_pred, 1 - eps)
-        return -np.mean(np.sum(y_true * np.log(y_pred), axis=1))
+        eps = 1e-12
+        return -np.mean(np.sum(y_true * np.log(y_pred + eps), axis=1))
     def backward(self, y_true, y_pred):
-        return (y_true - y_pred) / y_true.shape[0]
+        return (y_pred - y_true) / y_true.shape[0]
+
+

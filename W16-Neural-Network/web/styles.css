@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(10, 40px);
+}
+
+.button {
+    color: gray;
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+    padding: 20px
+}
+
+.active {
+    color: black;
+    background-color: black;
+}
