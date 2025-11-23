@@ -4,7 +4,7 @@ from neural_network import load_full
 import numpy as np
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, origins=["https://daynel-kem.github.io"])
 
 model = load_full("shape_predictor.npy")
 
