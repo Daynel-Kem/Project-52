@@ -1,4 +1,4 @@
-C++ Neural Network from Scratch
+Python Neural Network from Scratch
 Numpy
 
 Neurons
