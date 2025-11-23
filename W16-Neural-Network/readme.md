@@ -1,4 +1,5 @@
 C++ Neural Network from Scratch
+Numpy
 
 Neurons
 Activation Functions
