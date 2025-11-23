@@ -1,5 +1,5 @@
 import numpy as np
-from neural_network import load_full, Neural_Network
+from neural_network import load_full
 
 model = load_full("shape_predictor.npy")
 

@@ -7,12 +7,29 @@
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <p>Shape Predictor</p>
-    <div id="grid">
-    </div>
+    <div class="creator">
+        <h1>Shape Predictor</h1>
+        <p>Draw a Shape and then submit it</p>
+        <p>A prediction will be made by a small Neural Network and show you whether the shape is a Rectangle, Circle, or Triangle</p>
+        <p>Note: The Model struggles with squares and circle so please be gentle :)</p>
+        <p>Made by Daniel Kim</p>
+        <div id="grid">
+        </div>
 
-    <button id="clear">Clear</button>
-    <button id="submit">Submit</button>
+        <button id="clear">Clear</button>
+        <button id="submit">Predict</button>
+    </div>
+    <div class="predictor">
+        <div>
+            <h2>Prediction</h2>
+            <p id="prediction">Here</p>
+        </div>
+        <div>
+            <h2>Confidence</h2>
+            <p id="confidence">Here</p>
+        </div>
+
+    </div>
 
     <script src="./main.js"></script>
 </body>
