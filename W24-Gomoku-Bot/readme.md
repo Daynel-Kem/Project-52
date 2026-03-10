@@ -1,0 +1,1 @@
+plays gomoku like a real pwo
