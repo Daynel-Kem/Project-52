@@ -1,1 +1,1 @@
-simulation with maachine learning model to predict
+simulation with machine learning model to predict

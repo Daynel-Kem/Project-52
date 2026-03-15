@@ -1,6 +1,4 @@
-yall just gotta trust me but i implemented some backend api requests using express for the devoted app i'm making
-i cant show the code obviously but just trust me lol
-
+created a backend server that employs CRUD operations to a local database
 
 ⢀⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⣠⣤⣶⣶
 ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⢰⣿⣿⣿⣿
