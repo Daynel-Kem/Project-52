@@ -1,4 +1,6 @@
 created a backend server that employs CRUD operations to a local database
+The finish project can be found at  
+[https://github.com/Daynel-Kem/W7-Express](https://github.com/Daynel-Kem/W7-Express)
 
 ⢀⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⣠⣤⣶⣶
 ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⢰⣿⣿⣿⣿
